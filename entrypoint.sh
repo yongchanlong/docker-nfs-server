@@ -21,7 +21,7 @@ if [ -f "$file" ]; then
   rm /etc/exports
 fi
 
-ln /storage/docker-nfs-server/exports /etc/exports
+ln -s /storage/docker-nfs-server/exports /etc/exports
     
 mount -t nfsd nfsd /proc/fs/nfsd
 # Fixed nlockmgr port
