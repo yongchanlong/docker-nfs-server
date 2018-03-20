@@ -13,7 +13,7 @@ EXPOSE 111 111/udp 2049 2049/udp \
 WORKDIR /storage/docker-nfs-server
 RUN echo "/storage *(rw,fsid=0,insecure,no_root_squash,no_subtree_check,sync)" > /storage/docker-nfs-server/exports && \
     rm /etc/exports && \
-    ln -s /storage/docker-nfs-server/exports /etc/exports
+    ln /storage/docker-nfs-server/exports /etc/exports
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
