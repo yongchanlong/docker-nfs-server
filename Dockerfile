@@ -11,6 +11,6 @@ RUN set -ex && { \
 EXPOSE 111 111/udp 2049 2049/udp \
     32765 32765/udp 32766 32766/udp 32767 32767/udp 32768 32768/udp
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+COPY entrypoint.sh /root/entrypoint.sh
+RUN chmod +x /root/entrypoint.sh
+ENTRYPOINT ["/root/entrypoint.sh"]
