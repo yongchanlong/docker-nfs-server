@@ -1,13 +1,6 @@
 #!/bin/bash
 set -ex
 
-: ${EXPORT_DIR:="/storage"}
-: ${EXPORT_OPTS:="*(rw,fsid=0,insecure,no_root_squash,no_subtree_check,sync)"}
-
-mkdir -p $EXPORT_DIR
-echo "$EXPORT_DIR   $EXPORT_OPTS" > /etc/exports
-
-
 mount -t nfsd nfsd /proc/fs/nfsd
 # Fixed nlockmgr port
 echo 'fs.nfs.nlm_tcpport=32768' >> /etc/sysctl.conf
